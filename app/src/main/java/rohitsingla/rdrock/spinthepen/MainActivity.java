@@ -12,10 +12,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView imageViewPen;
-    Random random = new Random();
-    int newDirection, oldDirection;
-    float pivotX, pivotY;
+    private ImageView imageViewPen;
+    private Random random;
+    private int oldDirection;
     private boolean isPenSpinning;
 
     @Override
@@ -23,14 +22,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imageViewPen = findViewById(R.id.imageViewPen);
+        random = new Random();
 
     }
 
+
     public void spinThePen(View view) {
         if (!isPenSpinning) {
-            newDirection = random.nextInt(2600);
-            pivotX = imageViewPen.getPivotX();
-            pivotY = imageViewPen.getPivotY();
+            int newDirection = random.nextInt(2600);
+            float pivotX = imageViewPen.getPivotX();
+            float pivotY = imageViewPen.getPivotY();
             Animation rotatePen = new RotateAnimation(oldDirection, newDirection, pivotX, pivotY);
             rotatePen.setDuration(1100);
             rotatePen.setFillAfter(true);
