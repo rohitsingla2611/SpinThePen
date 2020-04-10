@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     public void spinThePen(View view) {
         if (!isPenSpinning) {
             newDirection = random.nextInt(2600);
