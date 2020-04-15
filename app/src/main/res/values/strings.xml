@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Spin The Pen</string>
+    <string name="pen_image">PenImage</string>
 </resources>
